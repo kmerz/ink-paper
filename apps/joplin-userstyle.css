@@ -1,0 +1,22 @@
+/* ink-paper theme for Joplin's note viewer (begin) */
+body {
+  font-family: "IBM Plex Sans", sans-serif;
+  color: #1A1A1A;
+  background-color: #F2EEE6;
+}
+code, pre, .inline-code {
+  font-family: "IBM Plex Mono", monospace;
+  background-color: #E7E2D8 !important;
+  border-color: #E7E2D8 !important;
+}
+a { color: inherit; text-decoration-color: #B23A2E; }
+blockquote { border-left-color: #8A8580; color: #5C5853; }
+hr { border-color: #8A8580; }
+@media (prefers-color-scheme: dark) {
+  body { color: #E9E4DA; background-color: #141414; }
+  code, pre, .inline-code { background-color: #1E1E1E !important; border-color: #1E1E1E !important; }
+  a { text-decoration-color: #C8473A; }
+  blockquote { border-left-color: #5C5853; color: #8A8580; }
+  hr { border-color: #5C5853; }
+}
+/* ink-paper theme (end) */

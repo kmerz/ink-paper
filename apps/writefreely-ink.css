@@ -1,0 +1,169 @@
+/* ink-paper theme for WriteFreely (motoko.one)
+   Warm paper, confident black ink, lots of space, one small red seal.
+   Paste into: your blog -> Customize -> Custom CSS (or use writefreely-ink-apply.sh). */
+
+:root {
+  --ink-bg: #F2EEE6;
+  --ink-surface: #E7E2D8;
+  --ink-line: #DDD7CC;
+  --ink-text: #1A1A1A;
+  --ink-muted: #8A8580;
+  --ink-soft: #5C5853;
+  --ink-accent: #B23A2E;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ink-bg: #141414;
+    --ink-surface: #1E1E1E;
+    --ink-line: #2A2826;
+    --ink-text: #E9E4DA;
+    --ink-muted: #5C5853;
+    --ink-soft: #8A8580;
+    --ink-accent: #C8473A;
+    color-scheme: dark;
+  }
+}
+
+/* ---------- page ---------- */
+html, body, body#collection, body#post, body#subpage {
+  background-color: var(--ink-bg) !important;
+  color: var(--ink-text) !important;
+}
+body {
+  font-family: "IBM Plex Serif", "Iowan Old Style", Georgia, serif;
+  -webkit-font-smoothing: antialiased;
+}
+::selection { background: var(--ink-line); color: var(--ink-text); }
+
+/* ---------- blog header: title with a red seal ---------- */
+#blog-title, header h1 {
+  font-family: "IBM Plex Sans", system-ui, sans-serif;
+  font-weight: 600;
+  letter-spacing: .01em;
+}
+#blog-title a, header h1 a { color: var(--ink-text) !important; text-decoration: none; }
+#blog-title::before, body#collection header h1::before {
+  content: "";
+  display: inline-block;
+  width: .55em; height: .55em;
+  margin-right: .45em;
+  background: var(--ink-accent);
+  border-radius: 1px;
+  vertical-align: .08em;
+}
+header .description, #collection header p.description {
+  color: var(--ink-soft) !important;
+  font-style: italic;
+}
+header nav a, nav a, .pinned {
+  font-family: "IBM Plex Sans", system-ui, sans-serif;
+  color: var(--ink-soft) !important;
+}
+header nav a:hover, nav a:hover { color: var(--ink-text) !important; }
+
+/* ---------- posts ---------- */
+article h2, article h2#title, .post-title, #post h2 {
+  font-family: "IBM Plex Sans", system-ui, sans-serif;
+  font-weight: 600;
+  letter-spacing: .005em;
+}
+article h2 a, .post-title a, h2#title a { color: var(--ink-text) !important; text-decoration: none; }
+article h2 a:hover, .post-title a:hover { text-decoration: underline; text-decoration-color: var(--ink-accent); text-underline-offset: .18em; }
+time, .dt-published, article time, .post-title time, .time {
+  font-family: "IBM Plex Sans", system-ui, sans-serif;
+  color: var(--ink-soft) !important;
+  font-size: .85em;
+}
+article, .e-content, #post-body {
+  line-height: 1.7;
+}
+.e-content p, #post-body p { margin: 0 0 1.15em; }
+article h1, article h3, article h4, .e-content h1, .e-content h2, .e-content h3 {
+  font-family: "IBM Plex Sans", system-ui, sans-serif;
+  font-weight: 600;
+  color: var(--ink-text);
+}
+
+/* links: ink, with a thin red underline - the only red besides the seal */
+a { color: var(--ink-text); }
+.e-content a, #post-body a, article p a {
+  color: var(--ink-text) !important;
+  text-decoration: underline;
+  text-decoration-color: var(--ink-accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: .18em;
+}
+.e-content a:hover, #post-body a:hover { text-decoration-thickness: 2px; }
+a.hashtag, .hashtag { color: var(--ink-soft) !important; }
+
+/* ---------- details ---------- */
+blockquote {
+  border-left: 2px solid var(--ink-text) !important;
+  color: var(--ink-soft) !important;
+  margin-left: 0; padding-left: 1.1em;
+  font-style: italic;
+}
+hr {
+  border: 0 !important;
+  height: 1px;
+  background: var(--ink-line) !important;
+  margin: 2.5em auto;
+  width: 30%;
+}
+code, pre, kbd, .wrap, tt {
+  font-family: "IBM Plex Mono", ui-monospace, monospace !important;
+}
+code { background: var(--ink-surface) !important; color: var(--ink-text) !important; padding: .1em .35em; border-radius: 2px; }
+pre {
+  background: var(--ink-surface) !important;
+  color: var(--ink-text) !important;
+  border: 0 !important;
+  border-radius: 3px;
+  padding: 1em 1.2em;
+  overflow-x: auto;
+  line-height: 1.5;
+}
+pre code { background: none !important; padding: 0; }
+img { border-radius: 2px; }
+figure figcaption, .e-content figcaption { color: var(--ink-soft); font-size: .9em; }
+table { border-collapse: collapse; }
+th, td { border-bottom: 1px solid var(--ink-line) !important; padding: .35em .6em; }
+
+/* ---------- list of posts, pagination, footer ---------- */
+#wrapper article, body#collection article {
+  border-bottom: 1px solid var(--ink-line);
+  padding-bottom: 1.6em;
+  margin-bottom: 1.8em;
+}
+body#collection article:last-of-type { border-bottom: 0; }
+.read-more, a.read-more {
+  font-family: "IBM Plex Sans", system-ui, sans-serif;
+  color: var(--ink-soft) !important;
+  font-size: .9em;
+}
+#paging, .pagination, nav#paging {
+  font-family: "IBM Plex Sans", system-ui, sans-serif;
+}
+#paging a, .pagination a { color: var(--ink-soft) !important; }
+footer, footer nav, footer a, #post footer {
+  font-family: "IBM Plex Sans", system-ui, sans-serif;
+  color: var(--ink-muted) !important;
+  font-size: .85em;
+}
+footer { border-top: 1px solid var(--ink-line); }
+
+/* ---------- forms (password-protected blogs, subscribe) ---------- */
+input, textarea, select {
+  background: var(--ink-surface) !important;
+  color: var(--ink-text) !important;
+  border: 1px solid var(--ink-line) !important;
+  border-radius: 3px;
+}
+input:focus, textarea:focus { outline: 2px solid var(--ink-accent); outline-offset: 1px; }
+button, input[type=submit] {
+  background: var(--ink-text) !important;
+  color: var(--ink-bg) !important;
+  border: 0 !important;
+  border-radius: 3px;
+}

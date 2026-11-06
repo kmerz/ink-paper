@@ -1,0 +1,65 @@
+/* ink-paper theme for Firefox and Thunderbird (begin)
+   Warm paper / black ink, red only for focus and the active tab.
+   Follows the app's light/dark mode, which follows GNOME. */
+:root {
+  --ink-bg: #F2EEE6;
+  --ink-surface: #E7E2D8;
+  --ink-text: #1A1A1A;
+  --ink-muted: #8A8580;
+  --ink-accent: #B23A2E;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ink-bg: #141414;
+    --ink-surface: #1E1E1E;
+    --ink-text: #E9E4DA;
+    --ink-muted: #5C5853;
+    --ink-accent: #C8473A;
+  }
+}
+
+/* shared by both apps */
+:root {
+  --toolbar-bgcolor: var(--ink-bg) !important;
+  --toolbar-color: var(--ink-text) !important;
+  --toolbox-bgcolor: var(--ink-surface) !important;
+  --toolbox-bgcolor-inactive: var(--ink-surface) !important;
+  --toolbox-textcolor: var(--ink-text) !important;
+  --toolbox-textcolor-inactive: var(--ink-muted) !important;
+  --toolbar-field-background-color: var(--ink-surface) !important;
+  --toolbar-field-focus-background-color: var(--ink-bg) !important;
+  --toolbar-field-color: var(--ink-text) !important;
+  --toolbar-field-focus-color: var(--ink-text) !important;
+  --toolbar-field-focus-border-color: var(--ink-accent) !important;
+  --focus-outline-color: var(--ink-accent) !important;
+  --arrowpanel-background: var(--ink-bg) !important;
+  --arrowpanel-color: var(--ink-text) !important;
+  --arrowpanel-border-color: var(--ink-surface) !important;
+  --sidebar-background-color: var(--ink-surface) !important;
+  --sidebar-text-color: var(--ink-text) !important;
+  --tab-selected-bgcolor: var(--ink-bg) !important;
+  --tab-selected-textcolor: var(--ink-text) !important;
+  --tab-border-radius: 3px !important;
+}
+
+/* Firefox */
+#navigator-toolbox { background-color: var(--ink-surface) !important; }
+.tab-background:is([selected], [multiselected]) {
+  box-shadow: inset 0 2px 0 var(--ink-accent) !important;
+}
+
+/* Thunderbird (Supernova layout variables) */
+:root {
+  --layout-background-0: var(--ink-bg) !important;
+  --layout-background-1: var(--ink-surface) !important;
+  --layout-background-2: var(--ink-surface) !important;
+  --layout-background-3: var(--ink-surface) !important;
+  --layout-color-0: var(--ink-text) !important;
+  --layout-color-1: var(--ink-text) !important;
+  --layout-color-2: var(--ink-muted) !important;
+  --tree-view-bg: var(--ink-bg) !important;
+  --sidebar-highlight-background-color: var(--ink-muted) !important;
+  --selected-item-color: var(--ink-muted) !important;
+  --selected-item-text-color: var(--ink-bg) !important;
+}
+/* ink-paper theme (end) */
